@@ -1,0 +1,20 @@
+/*=================== Header area ================*/
+.jumbotron{
+	text-align: center;
+	opacity: 0.8;
+}
+/*================== Body content ======================*/
+body {
+	background:url(../images/background.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.panel-heading {
+    background: rgb(98, 38, 39)!important;
+    color: #fff!important;
+}
+
+.table-striped>tbody>tr:nth-of-type(odd) {
+    background-color: #f4d584!important;
+}
