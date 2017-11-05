@@ -1,7 +1,5 @@
  $(document).ready(function(){
- 	console.log("ready");
-
-   // Initialize Firebase
+ 	// Initialize Firebase
   var config = {
     apiKey: "AIzaSyDmpMu2XYtMnhn97CkizE8vrNhkScCPM9g",
     authDomain: "trains-ba88e.firebaseapp.com",
@@ -17,15 +15,11 @@ var db = firebase.database();
 var currentTime = moment();
 console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 
-
-
-
-
+//The Current time
 $("#currentTime").text(currentTime);
 
 
-$("#submitButton").on("click", function(){
-	console.log("submit button working");
+$("#submitBTN").on("click", function(){
 	event.preventDefault();
 	var trainName = $("#add-train").val().trim();
 	var destination= $("#destination").val();
@@ -43,6 +37,7 @@ $("#submitButton").on("click", function(){
 
 db.ref("schedule").on("child_added", function(snapshot){
 	var data = snapshot.val();
+	//showing current snapshots in console
 	console.log(snapshot.val());
 	var frequency = data.frequency;
 	console.log(data.frequency);
@@ -59,12 +54,8 @@ db.ref("schedule").on("child_added", function(snapshot){
     var nextTrain = moment().add(MinutesTillTrain, "minutes");
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
-
+    //Created the table to add the data
 	$("#table-body").append(`<tr><td>${data.trainName}</td><td>${data.destination}</td><td>${data.frequency}</td><td>${nextTrain}</td><td>${MinutesTillTrain}</td></tr>`)
 });
-
-
-
-
 
 });
