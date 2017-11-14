@@ -1,11 +1,11 @@
  $(document).ready(function(){
- 	// Initialize Firebase
+ // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDmpMu2XYtMnhn97CkizE8vrNhkScCPM9g",
     authDomain: "trains-ba88e.firebaseapp.com",
     databaseURL: "https://trains-ba88e.firebaseio.com",
     projectId: "trains-ba88e",
-    storageBucket: "",
+    storageBucket: "trains-ba88e.appspot.com",
     messagingSenderId: "904670208275"
   };
   firebase.initializeApp(config);
